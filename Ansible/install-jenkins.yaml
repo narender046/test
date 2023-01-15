@@ -1,0 +1,12 @@
+---
+- name: Play1 - creating kubernetes cluster 
+  hosts: k8-workers
+  become: ture
+  tasks:
+    name: Installing kubeadm,kubectl,kubelet and containerd
+    copy: 
+      src: worker.sh 
+      dest: /home/ubuntu/
+    script: /home/ubuntu/worker.sh
+
+
